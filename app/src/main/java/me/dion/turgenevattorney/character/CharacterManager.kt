@@ -1,9 +1,11 @@
 package me.dion.turgenevattorney.character
 
-class CharacterManager {
-    val bazarov = Character("Базаров")
-    val arkadij = Character("Аркадий")
-    val fenechka = Character("Фенечка")
-    val pavelPetrovich = Character("Павел Петрович")
-    val nikolajPetrovich = Character("Николай Петрович")
+import java.io.Serializable
+
+class CharacterManager : Serializable {
+    val BAZAROV = Character("Базаров")
+    val ARKADIJ = Character("Аркадий")
+    val FENECHKA = Character("Фенечка")
+    val PAVEL_PETROVICH = Character("Павел Петрович")
+    val NIKOLAY_PETROVICH = Character("Николай Петрович")
 }
