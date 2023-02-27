@@ -10,15 +10,16 @@ import me.dion.turgenevattorney.management.QuestionManager
 import me.dion.turgenevattorney.management.ScoreManager
 
 class MainActivity : AppCompatActivity() {
-    private val startButton = findViewById<Button>(R.id.start_button)
+    private lateinit var startButton: Button
 
     private val characterManager = CharacterManager()
-    private val scoreManager = ScoreManager()
-    private val questionManager = QuestionManager()
+    private val scoreManager = ScoreManager(characterManager)
+    private val questionManager = QuestionManager(characterManager)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        startButton = findViewById(R.id.start_button)
         startButton.setOnClickListener {
             start()
         }

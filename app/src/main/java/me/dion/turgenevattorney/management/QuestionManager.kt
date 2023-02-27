@@ -70,6 +70,89 @@ class QuestionManager(characters: CharacterManager) : Serializable {
                 )
             )
         ),
+        Question(
+            "Представь, что наступило наконец-то лето! Каникулы! С чем у тебя это прекрасное время ассоциируется?",
+            arrayListOf(
+                Variant(
+                    "Вставать рано рано, встречая солнце, гулять по мокрой от росы и прохладной траве, вдыхая ароматы цветов...",
+                    characters.NIKOLAY_PETROVICH
+                ),
+                Variant(
+                    "Зной, комары, да мухи!",
+                    characters.PAVEL_PETROVICH
+                ),
+                Variant("У лета есть и плюсы, и минусы, как, впрочем, и у всего остального.",
+                    characters.BAZAROV
+                ),
+                Variant(
+                    "Можно хорошо и спокойно отдохнуть, больше времени уделяя себе и своим делам.",
+                    characters.ARKADIJ
+                )
+            )
+        ),
+        Question(
+            "Представь, что ты нашёл на улице маленького, миленького, несчастного котеночка! Что ты сделаешь?",
+            arrayListOf(
+                Variant(
+                    "Ach, wie s! Возьму его конечно, мама хоть и рассердится, но он кому угодно понравится!",
+                    characters.NIKOLAY_PETROVICH
+                ),
+                Variant(
+                    "Возьму кошака к себе, может знакомым потом подарю.",
+                    characters.PAVEL_PETROVICH
+                ),
+                Variant(
+                    "Вдруг у меня аллергия на кошек?",
+                    characters.BAZAROV
+                ),
+                Variant(
+                    "Вообще-то животных с улицы не берут, потому что у них могут быть и блохи, и т.п...",
+                    characters.ARKADIJ
+                )
+            )
+        ),
+        Question(
+            "Ты купил лимонад и, оказалось, что выиграл путевку в Египет на двоих! Кого ты возьмешь с собой?",
+            arrayListOf(
+                Variant(
+                    "Может быть одноклассника какого-нибудь... Будем в дороге в карты играть.",
+                    characters.NIKOLAY_PETROVICH
+                ),
+                Variant(
+                    "Может отдам родителям путевку: их порадую и из дома сплавлю!",
+                    characters.PAVEL_PETROVICH
+                ),
+                Variant(
+                    "Не знаю, но чтоб с этим человеком было о чем поговорить.",
+                    characters.BAZAROV
+                ),
+                Variant(
+                    "Может быть кого-то из родителей, или брата/сестру, а может быть кого-то из друзей; лишь бы мозги не кипели, я уже настроился на отдых!",
+                    characters.ARKADIJ
+                )
+            )
+        ),
+        Question(
+            "Какой герой произведения тебе больше всех нравится?",
+            arrayListOf(
+                Variant(
+                    "Николай Петрович",
+                    characters.NIKOLAY_PETROVICH
+                ),
+                Variant(
+                    "Павел Петрович",
+                    characters.PAVEL_PETROVICH
+                ),
+                Variant(
+                    "Базаров",
+                    characters.BAZAROV
+                ),
+                Variant(
+                    "Аркадий",
+                    characters.ARKADIJ
+                )
+            )
+        ),
     )
     private var currentIndex = 0
 
@@ -78,6 +161,10 @@ class QuestionManager(characters: CharacterManager) : Serializable {
             return
         }
         currentIndex++
+    }
+
+    fun isLast(): Boolean {
+        return currentIndex == questions.size - 1
     }
 
     fun getCurrentQuestion(): Question {
